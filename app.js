@@ -4,6 +4,7 @@ const cors = require("cors")
 
 const app = express()
 const adminRoute = require("./controller/adminRoute")
+const studRoute = require("./controller/studRoute")
 
 //middleware
 app.use(express.json())
@@ -15,6 +16,7 @@ mongoose.connect("mongodb+srv://Lakshmi:ZEPH26YR@cluster0.gs9xdes.mongodb.net/co
 
 //routing
 app.use("/api/admin",adminRoute)
+app.use("/api/student",studRoute)
 
 app.listen(3005,()=>
 console.log("Server Running")
