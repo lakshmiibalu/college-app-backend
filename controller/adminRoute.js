@@ -12,6 +12,10 @@ router.post("/adminlogin",async(req,res)=>{
     })
 })
 
+router.get("/viewstud",async(req,res)=>{
+    let data = await adminModel.find()
+    res.json(data)
+})
 
 
 module.exports = router
