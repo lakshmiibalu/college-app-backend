@@ -2,6 +2,11 @@ const mongoose = require("mongoose")
 
 const marksSchema = mongoose.Schema(
     {
+        userId : {
+            type:mongoose.Schema.Types.ObjectId,
+            required : true,
+            ref:"admin"
+        },
         english:{
             type:String,
             required:true
