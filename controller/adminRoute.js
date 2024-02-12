@@ -16,7 +16,7 @@ router.post("/adminlogin",async(req,res)=>{
     data.password = hashedPassword
     let admin = new adminModel(data)
     let result = await admin.save()
-    res.send({
+    res.json({
         status:"success"
     })
 })
