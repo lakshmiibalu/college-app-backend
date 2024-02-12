@@ -15,4 +15,13 @@ router.post("/addmarks",async(req,res)=>{
 }
 )
 
+
+router.get("/viewmarks",async(req,res)=>{
+    let data = await marksModel.find()
+     .populate("userId","name  rollno admno clgname parent mobno email")
+    .exec()
+    res.json(data)
+})
+
+
 module.exports = router
